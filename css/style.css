@@ -1,0 +1,126 @@
+a{
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+}
+a:hover{
+	color: black;
+	text-decoration: none;
+}
+.head{
+	margin: 50px 0;
+	text-align: center;
+}
+.container{
+	width: 100%;
+	margin-top: 100px;
+}
+.border{
+    border: 1px solid black;
+    height: 250px;
+    width: 10px;
+    margin: 0px auto;
+    position: relative;
+    border-top: none;
+    border-bottom: none;
+}
+.border:last-child{
+	border-bottom:  1px solid black;
+}
+.border__circle{
+	border-radius: 50%;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    left: -16px;
+    top: -3px;
+    background: white;
+}
+
+.menu{
+	background: black;
+    height: 58px;
+}
+.menu__items{
+	display: flex;
+	justify-content: space-around;
+}
+.menu__items_item{
+	list-style: none;
+	padding: 20px 50px 18px 50px;
+	border:1px solid white;
+
+}
+.menu__items_item:hover{
+	background: white;
+	border:1px solid black;
+
+}
+.menu__items_item:hover > a{
+	color: black;
+
+}
+.menu__item_head{
+    position: absolute;
+    left: -300px;
+    width: 150px;
+    top: -10px;
+}
+.fill{
+	background: black;
+    position: absolute;
+    bottom: 0px;  
+    width: 11px;
+}
+.tasks{
+	position: absolute;
+    left: 80px;
+    top: -59px;
+    border:1px solid black;
+}
+.tasks__task{
+	width: 300px;
+	display: flex;
+}
+.tasks__task_checkbox{
+	margin-top: 8px;
+}
+.tasks__task_name{
+	margin: 5px;
+}
+.submit{
+    color: white;
+    width: 200px;
+    background: black;
+    border:1px solid black;
+}
+.submit:hover{
+    color: black;
+    background: white;
+}
+.name{
+    height: 25px;
+    width: 250px;
+    padding: 0 5px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.task{
+    margin: 5px 0 5px 50px;
+    width: 200px;
+    height: 20px;
+    padding: 0 5px;
+}
+.borderes{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.add-task{
+    width: 100px;
+    margin-bottom: 20px;
+    margin-left: 163px;
+}
