@@ -58,7 +58,6 @@ button.onclick = function() {
 	var circles = document.querySelectorAll(".border__circle");
 		for(let i = 0;i < checkboxes.length; i++){
 			checkboxes[i].onchange = function(){
-				if(checkboxes[i].checked){
 					target = checkboxes[i].parentNode.parentNode.parentNode.querySelector(".fill");
 					let target_chekboxes = checkboxes[i].parentNode.parentNode.querySelectorAll(".tasks__task_checkbox");
 					let checked = checkboxes[i].parentNode.parentNode.querySelectorAll(".tasks__task_name");
@@ -69,13 +68,13 @@ button.onclick = function() {
 							all_chek.push(check);
 						}
 					}
-					var math = 85/target_chekboxes.length;
+					let math = 85/target_chekboxes.length;
+					let summ = math*all_chek.length;
+				if(checkboxes[i].checked){
 					checkboxes__name[i].style.textDecoration = "line-through";
-					var summ = math*all_chek.length;
 					target.style.height = summ +"%";
 				}else if(!checkboxes[i].checked){
 					checkboxes__name[i].style.textDecoration = "none";
-					summ -=math;
 					target.style.height = summ +"%";
 				}
 		for(let i = 0;i < borderres.length; i++){
@@ -100,5 +99,3 @@ add_task.onclick = function (){
 		}
 	}
 }
-
-
