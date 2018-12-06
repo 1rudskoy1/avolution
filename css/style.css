@@ -120,7 +120,31 @@ a:hover{
     flex-direction: column-reverse;
 }
 .add-task{
-    width: 100px;
+    cursor: pointer;
+    width: 120px;
     margin-bottom: 20px;
-    margin-left: 163px;
+    margin-left: 23px;
+    margin-top: 10px;
+    color: white;
+    background: black;
+    border:1px solid black;
+}
+.add-task:hover{
+    color: black;
+    background: white;
+}
+
+.remove-task{
+    background: rgba(0,0,0,0);
+    color: red;
+    border:1px solid red;
+    cursor: pointer;
+    width: 120px;
+    margin-bottom: 20px;
+    margin-left: 23px;
+    margin-top: 10px;
+}
+.remove-task:hover{
+    background: red;
+    color: white;
 }
