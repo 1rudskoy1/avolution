@@ -7,10 +7,47 @@ var form = document.querySelector(".form");
 var flex = document.querySelector(".flex");
 var red = document.querySelector(".red");
 var  borderres = [];
+var bords = document.querySelectorAll(".border");
 var checkboxes;
 var target;
 var title = document.querySelector(".name");
 red.style.display = "none";
+if(bords.length != 0){
+	var checkboxes = document.querySelectorAll(".tasks__task_checkbox");
+	var checkboxes__name = document.querySelectorAll(".tasks__task_name");
+	let fills = document.querySelectorAll(".fill");
+	let circles = document.querySelectorAll(".border__circle");
+		for(let i = 0;i < checkboxes.length; i++){
+			checkboxes[i].onchange = function(){
+			target = checkboxes[i].parentNode.parentNode.parentNode.querySelector(".fill");
+			let target_chekboxes = checkboxes[i].parentNode.parentNode.querySelectorAll(".tasks__task_checkbox");
+			let checked = checkboxes[i].parentNode.parentNode.querySelectorAll(".tasks__task_name");
+			let all_chek = [];
+			for(let j = 0; j < checked.length; j++){
+				if (checked[j].parentNode.querySelector(".tasks__task_checkbox").checked) {
+					let check = checked[j].parentNode.querySelector(".tasks__task_checkbox");
+					all_chek.push(check);
+				}
+			}
+			let math = 88/target_chekboxes.length;
+			let summ = math*all_chek.length;
+		if(checkboxes[i].checked){
+			checkboxes__name[i].style.textDecoration = "line-through";
+			target.style.height = summ +"%";
+		}else if(!checkboxes[i].checked){
+			checkboxes__name[i].style.textDecoration = "none";
+			target.style.height = summ +"%";
+		}
+		for(let i = 0;i < bords.length; i++){
+			if(fills[i].style.height >= 88 +"%"){
+				circles[i].style.background = "black";
+				}else{
+					circles[i].style.background = "white";
+				}
+			}
+		}
+	}
+}
 button.onclick = function() {
 	let border = document.createElement("div");
 	let circle = document.createElement("span");
@@ -42,12 +79,12 @@ button.onclick = function() {
 				tasks__task.appendChild(tasks__task_name);
 				tasks.appendChild(tasks__task);
 				border.appendChild(tasks);
+				let clone = border.cloneNode(true);
+				borderres.push(clone);
 			}else{
 				red.style.display = "block";
 			}
 		}
-		let clone = border.cloneNode(true);
-		borderres.push(clone);
 
 	for(let i = 0;i < borderres.length; i++){
 		cont_bord.appendChild(borderres[i]);
@@ -68,7 +105,7 @@ button.onclick = function() {
 							all_chek.push(check);
 						}
 					}
-					let math = 85/target_chekboxes.length;
+					let math = 88/target_chekboxes.length;
 					let summ = math*all_chek.length;
 				if(checkboxes[i].checked){
 					checkboxes__name[i].style.textDecoration = "line-through";
@@ -79,7 +116,7 @@ button.onclick = function() {
 				}
 		for(let i = 0;i < borderres.length; i++){
 			cont_bord.appendChild(borderres[i]);
-			if(fills[i].style.height == "85%"){
+			if(fills[i].style.height >= 88 +"%"){
 				circles[i].style.background = "black";
 				}else{
 					circles[i].style.background = "white";
@@ -88,6 +125,7 @@ button.onclick = function() {
 		}
 	}
 }
+
 add_task.onclick = function (){
 	let task = document.querySelector(".task").cloneNode(true);
 	form.insertBefore(task,flex);
